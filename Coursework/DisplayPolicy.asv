@@ -1,0 +1,18 @@
+function [] = DisplayPolicy(Policy, ActionNames, Locs, Shape)
+
+S = length(Policy);
+A = length(Policy(1,:));
+Action = zeros(S);
+
+for s = 1:S
+  for a = 1:A
+    if Policy(s,a) == 1
+	    %disp(strcat('Policy(',StateNames(s,:),')=',ActionNames(a,:)))
+        Action(s) = char(ActionNames(a,:));
+        if Action(s) == 'N'
+            Action
+    end
+  end
+end
+DisplayGrid(Action,Locs,Shape);
+end
